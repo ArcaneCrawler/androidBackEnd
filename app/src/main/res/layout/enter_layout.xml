@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/coor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="49dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="99dp"
+        android:ems="10"
+        android:hint="Origin"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/coor2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/coor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="49dp"
+        android:ems="10"
+        android:hint="Destination"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/getPointsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coor1" />
+
+    <Button
+        android:id="@+id/calcButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="81dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginStart="134dp"
+        android:onClick="calcButton_Click"
+        android:text="Calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/getPointsButton"
+        android:layout_width="104dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="59dp"
+        android:onClick="getPointsButton_Click"
+        android:text="Get Points"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coor2" />
+
+</android.support.constraint.ConstraintLayout>
