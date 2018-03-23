@@ -68,11 +68,11 @@ public class MainBottomActivity extends AppCompatActivity {
 
     void fillData(){
         orders.clear();
-        /*orders.add(new Order(1, origin, destination, "8471", "5845620", "17 mart", "18 mart",
+        orders.add(new Order(1, addressFrom, addressTo, "8471", "5845620", "17 mart", "18 mart",
                 "18/00", "21,00", "18,00", "19,00", "TEST", "TEST", "Britva", "99.9"));
-*/
-        PointsFinder pf = new PointsFinder();
-        pf.execute();
+
+        //PointsFinder pf = new PointsFinder();
+        //pf.execute();
     }
 
     private void getList(){
