@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "92605997153",
+    "firebase_url": "https://mapforhuck.firebaseio.com",
+    "project_id": "mapforhuck",
+    "storage_bucket": "mapforhuck.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92605997153:android:6b5518f54ec9f67b",
+        "android_client_info": {
+          "package_name": "com.yummy.maps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92605997153-p1egvr70v832e8r2djel89k5luui9o3o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yummy.maps",
+            "certificate_hash": "95faa5aafaf80f0030067b8b7b4693302d94886c"
+          }
+        },
+        {
+          "client_id": "92605997153-ht6662566gf7apvlmdecqu1cr0e322dr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdZG9TcVA6GPTT8BaALWcREw1Rk8NP2e0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92605997153-ht6662566gf7apvlmdecqu1cr0e322dr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

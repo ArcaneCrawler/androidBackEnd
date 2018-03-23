@@ -62,6 +62,11 @@ public class EnterActivity extends Activity {
             coor2.setText(destination);
     }
 
+    public void onClickTest(View view) {
+        Intent intent = new Intent(this, MainBottomActivity.class);
+        startActivity(intent);
+    }
+
     private class PointsFinder extends AsyncTask<Void, Void, String> {
 
         HttpURLConnection urlConnection = null;

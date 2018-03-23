@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">maps</string>
-    <string name="google_maps_key">AIzaSyBjcaoAqt2cTvyCSizBBkENTRdGvETbmXs</string>
+    <string name="google_maps_key">AIzaSyA_T6StkD3qws2clr7U_8Y20d1Ypy6cYiA</string>
+    <string name="title_activity_main_bottom">MainBottomActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_orders">Orders</string>
+    <string name="title_profile">Profile</string>
 </resources>
