@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -107,8 +108,11 @@ public class EnterActivity extends Activity {
 
             try {
                 dataJsonObj = new JSONObject(strJson);
-                origin = dataJsonObj.getString("addressFrom");
-                destination = dataJsonObj.getString("addressTo");
+                //JSONArray dataJsonArr = new JSONObject(strJson).getJSONArray("dataSet").getJSONArray(0);
+                JSONArray jsonArray = (JSONArray) dataJsonObj.get("dataSet");
+                JSONObject result = jsonArray.getJSONObject(0);
+                origin = result.getString("addressFrom");
+                destination = result.getString("addressTo");
 
                 //Log.d(LOG_TAG, "origin: " + origin);
                 //Log.d(LOG_TAG, "destination: " + destination);
