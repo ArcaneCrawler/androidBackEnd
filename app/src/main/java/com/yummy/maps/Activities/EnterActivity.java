@@ -1,4 +1,4 @@
-package com.yummy.maps;
+package com.yummy.maps.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.yummy.maps.R;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,8 +20,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import Modules.GetPoints.PointsFinderListener;
 
 /**
  * Created by Admin on 14.03.2018.

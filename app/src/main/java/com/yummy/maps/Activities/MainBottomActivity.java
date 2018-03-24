@@ -1,4 +1,4 @@
-package com.yummy.maps;
+package com.yummy.maps.Activities;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,7 +12,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.yummy.maps.Adapters.OrdersAdapter;
 import com.yummy.maps.Entities.Order;
+import com.yummy.maps.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
