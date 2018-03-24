@@ -5,6 +5,7 @@
       <module fileurl="file://F:\ProjectsAndroid\androidBackend\AndroidBack.iml" filepath="F:\ProjectsAndroid\androidBackend\AndroidBack.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidBackend.iml" filepath="$PROJECT_DIR$/androidBackend.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://F:\ProjectsAndroid\androidBackend\app\app.iml" filepath="F:\ProjectsAndroid\androidBackend\app\app.iml" />
       <module fileurl="file://F:\ProjectsAndroid\AndroidBack\maps.iml" filepath="F:\ProjectsAndroid\AndroidBack\maps.iml" />
     </modules>
   </component>
