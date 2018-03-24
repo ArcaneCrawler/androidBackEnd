@@ -1,43 +1,25 @@
 package com.yummy.maps.Activities;
 
-import android.os.AsyncTask;
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.yummy.maps.Adapters.OrdersAdapter;
 import com.yummy.maps.Entities.Order;
-import com.yummy.maps.PointFinder;
 import com.yummy.maps.R;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 
-public class MainBottomActivity extends AppCompatActivity {
+public class MainBottomActivity extends Activity {
 
-    private TextView mTextMessage;
     final String LOG_TAG = "myLogs";
     ArrayList<Order> orders = new ArrayList<Order>();
     OrdersAdapter ordersAdapter;
-    private String addressFrom = "null";
-    private String addressTo = "null";
-    long id;
-
+    FragmentTransaction transaction;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -45,31 +27,38 @@ public class MainBottomActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_order:
-                    //mTextMessage.setText(R.string.title_orders);
-                    getList();
+                    setFragment(new OrderFragment());
                     return true;
                 case R.id.navigation_profile:
+                    setFragment(new ProfileFragment());
                     //mTextMessage.setText(R.string.title_profile);
                     return true;
                 case R.id.navigation_notifications:
                     //mTextMessage.setText(R.string.title_notifications);
+                    //setFragment(new notificationFragment());
                     return true;
             }
             return false;
         }
     };
 
+    private void setFragment(Fragment fragment){
+        transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.frag_orders, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_bottom);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    void fillData(){
+    /*void fillData(){
         orders.clear();
 
         PointFinder pf = new PointFinder();
@@ -90,8 +79,5 @@ public class MainBottomActivity extends AppCompatActivity {
                         + id);
             }
         });
-    }
-
-
-
+    }*/
 }

@@ -2,15 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yummy.maps.Activities.OrderFragment">
+    tools:context="com.yummy.maps.Activities.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <ListView
-        android:id="@+id/list_Orders"
+    <TextView
+        android:id="@+id/frag_profile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
-    </ListView>
+        android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>
