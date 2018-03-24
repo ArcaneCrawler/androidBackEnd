@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.yummy.maps.Adapters.OrdersAdapter;
 import com.yummy.maps.Entities.Order;
+import com.yummy.maps.PointFinder;
 import com.yummy.maps.R;
 
 import org.json.JSONArray;
@@ -70,11 +71,10 @@ public class MainBottomActivity extends AppCompatActivity {
 
     void fillData(){
         orders.clear();
-        orders.add(new Order(1, addressFrom, addressTo, "8471", "5845620", "17 mart", "18 mart",
-                "18/00", "21,00", "18,00", "19,00", "TEST", "TEST", "Britva", "99.9"));
 
-        //PointsFinder pf = new PointsFinder();
-        //pf.execute();
+        PointFinder pf = new PointFinder();
+        pf.execute();
+        orders = pf.getOrders();
     }
 
     private void getList(){
@@ -92,72 +92,6 @@ public class MainBottomActivity extends AppCompatActivity {
         });
     }
 
-    private class PointsFinder extends AsyncTask<Void, Void, String> {
 
-        HttpURLConnection urlConnection = null;
-        BufferedReader reader = null;
-        String resultJson = "";
-        String LOG_TAG = "my_log";
-
-        @Override
-        protected String doInBackground(Void... params) {
-            // получаем данные с внешнего ресурса
-            try {
-                URL url = new URL("https://hidden-atoll-44842.herokuapp.com/example");
-
-                urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setRequestMethod("GET");
-                urlConnection.connect();
-
-                InputStream inputStream = urlConnection.getInputStream();
-                StringBuffer buffer = new StringBuffer();
-
-                reader = new BufferedReader(new InputStreamReader(inputStream));
-
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    buffer.append(line);
-                }
-
-                resultJson = buffer.toString();
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return resultJson;
-        }
-
-        @Override
-        protected void onPostExecute(String strJson) {
-            super.onPostExecute(strJson);
-            // выводим целиком полученную json-строку
-            Log.d(LOG_TAG, strJson);
-
-            JSONObject dataJsonObj = null;
-            String secondName = "";
-
-            try {
-                dataJsonObj = new JSONObject(strJson);
-                //JSONArray dataJsonArr = new JSONObject(strJson).getJSONArray("dataSet").getJSONArray(0);
-                JSONArray jsonArray = (JSONArray) dataJsonObj.get("dataSet");
-
-                for(int i = 0; i < jsonArray.length(); i++){
-                    JSONObject result = jsonArray.getJSONObject(i);
-                    id = Long.parseLong(result.getString("id"));
-                    addressFrom = result.getString("addressFrom");
-                    addressTo = result.getString("addressTo");
-                    orders.add(new Order(id, addressFrom, addressTo, "8471", "5845620", "17 mart", "18 mart",
-                            "18/00", "21,00", "18,00", "19,00", "TEST", "TEST", "Britva", "99.9"));
-                }
-
-                //Log.d(LOG_TAG, "origin: " + origin);
-                //Log.d(LOG_TAG, "destination: " + destination);
-
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
 }
