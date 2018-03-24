@@ -1,4 +1,4 @@
-package com.yummy.maps;
+package com.yummy.maps.Activities;
 
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.yummy.maps.R;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;

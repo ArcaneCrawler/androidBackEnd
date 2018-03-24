@@ -1,4 +1,4 @@
-package com.yummy.maps;
+package com.yummy.maps.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.yummy.maps.Entities.Order;
+import com.yummy.maps.R;
 
 import java.util.ArrayList;
 
